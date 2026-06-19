@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { portfolioProjects as projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 
 type Props = {
