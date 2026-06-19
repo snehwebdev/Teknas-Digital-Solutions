@@ -1,4 +1,4 @@
-export const projects = [
+export const portfolioProjects = [
   {
     slug: "healthcare-clinic",
     title: "Healthcare Clinic Platform",
