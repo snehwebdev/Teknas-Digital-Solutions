@@ -19,3 +19,13 @@ export function getRecommendedScreens(
 
   return base + featureCount;
 }
+
+export function getAppTimeline(
+  screenCount: number
+) {
+  if (screenCount <= 5) return "4-6 Weeks";
+  if (screenCount <= 10) return "6-8 Weeks";
+  if (screenCount <= 15) return "8-12 Weeks";
+
+  return "12+ Weeks";
+}
