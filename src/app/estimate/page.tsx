@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import { featuresByIndustry } from "@/data/features";
 import { appFeaturesByIndustry } from "@/data/appFeatures";
 import { getRecommendedPages } from "@/data/pageRecommendations";
@@ -70,6 +71,12 @@ title: "Other Businesses",
 
 export default function EstimatePage() {
 const [step, setStep] = useState(1);
+useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [step]);
 const whatsappNumber = "917990425573";
 const [service, setService] = useState("");
 const isAppFlow = service === "app";
@@ -806,46 +813,75 @@ Project Estimator </h1>
           <p className="mb-3 text-sm text-slate-500">
             Recommended Packages
           </p>
-
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={() => applyPreset("Starter")}
-              className={`rounded-full border px-5 py-2 transition ${
-                selectedPackage === "Starter"
-                  ? "border-slate-900 bg-slate-900 text-white"
-                  : "border-slate-300"
-              }`}
-            >
-              Starter
-            </button>
-
-            <button
-              onClick={() => applyPreset("Growth")}
-              className={`rounded-full border px-5 py-2 transition ${
-                selectedPackage === "Growth"
-                  ? "border-slate-900 bg-slate-900 text-white"
-                  : "border-slate-300"
-              }`}
-            >
-              Growth
-            </button>
-
-            <button
-              onClick={() => applyPreset("Premium")}
-              className={`rounded-full border px-5 py-2 transition ${
-                selectedPackage === "Premium"
-                  ? "border-slate-900 bg-slate-900 text-white"
-                  : "border-slate-300"
-              }`}
-            >
-              Premium
-            </button>
-          </div>
-
-          <p className="mt-2 text-slate-600">
+                    <p className="mt-2 text-slate-600">
           Choose a package to automatically select recommended features.
           You can still add or remove features manually.
         </p>
+          <div className="flex flex-wrap gap-3">
+
+          <button
+            onClick={() => applyPreset("Starter")}
+            className={`
+              rounded-full
+              border
+              px-6
+              py-3
+              font-medium
+              transition-all
+              duration-300
+              ${
+                selectedPackage === "Starter"
+                  ? "border-blue-600 bg-blue-600 text-white shadow-lg shadow-blue-500/30 scale-105"
+                  : "border-slate-300 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-600 hover:shadow-md"
+              }
+            `}
+          >
+            Starter
+          </button>
+
+          <button
+            onClick={() => applyPreset("Growth")}
+            className={`
+              rounded-full
+              border
+              px-6
+              py-3
+              font-medium
+              transition-all
+              duration-300
+              ${
+                selectedPackage === "Growth"
+                  ? "border-blue-600 bg-blue-600 text-white shadow-lg shadow-blue-500/30 scale-105"
+                  : "border-slate-300 bg-white text-slate-700 hover:border-blue-400 hover:text-blue-600 hover:shadow-md"
+              }
+            `}
+          >
+            Growth
+          </button>
+
+          <button
+            onClick={() => applyPreset("Premium")}
+            className={`
+              rounded-full
+              border
+              px-6
+              py-3
+              font-medium
+              transition-all
+              duration-300
+              ${
+                selectedPackage === "Premium"
+                  ? "border-slate-900 bg-gradient-to-r from-slate-900 to-slate-700 text-white shadow-xl scale-105"
+                  : "border-slate-300 bg-white text-slate-700 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
+              }
+            `}
+          >
+            Premium
+          </button>
+
+        </div>
+
+
         </div>
 
 
@@ -1466,21 +1502,24 @@ hover:shadow-xl
       screens and complexity.
     </p>
 
-    <div className="mt-8 rounded-[32px] border border-slate-200 bg-slate-50 p-10 text-center">
+    <div className="mt-8 rounded-[32px] border border-blue-200 bg-blue-50 p-10 text-center">
 
-      <p className="text-sm text-slate-500">
-        Estimated Investment
+      <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-600">
+        Estimated Starting Price
       </p>
 
-      <p className="mt-3 text-4xl font-semibold">
-        ₹{appEstimate.low.toLocaleString()}
-        {" - "}
-        ₹{appEstimate.high.toLocaleString()}
+      <p className="mt-4 text-5xl font-semibold text-slate-900">
+        From ₹{(Math.ceil(appEstimate.low / 1000) * 1000 - 1).toLocaleString("en-IN")}
       </p>
-      <p className="mt-4 text-slate-600">
-        Final pricing may vary depending on integrations,
-        app store requirements, backend complexity and
-        exact project requirements.
+
+      <p className="mt-5 text-lg font-medium text-slate-700">
+        Tailored after a free consultation
+      </p>
+
+      <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
+        This represents the starting investment for your application.
+        The final quotation depends on features, integrations,
+        backend infrastructure, app store requirements and overall project scope.
       </p>
 
     </div>
@@ -1545,7 +1584,7 @@ hover:shadow-xl
           Math.ceil(screens / 2)
         )} Weeks
         *Estimated Budget:*
-        ₹${appEstimate.low.toLocaleString()} - ₹${appEstimate.high.toLocaleString()}
+        ₹${appEstimate.low.toLocaleString()}
         ━━━━━━━━━━━━━━
         *Selected Features:*
         ${getSelectedAppFeatureTitles()}
@@ -1585,20 +1624,26 @@ hover:shadow-xl
           </p>
         </div>
 
-        <div className="mt-12 rounded-[32px] border border-slate-200 bg-slate-50 p-10 text-center">
-          <p className="text-sm uppercase tracking-wider text-slate-500">
-            Estimated Range
-          </p>
+        <div className="mt-12 rounded-[32px] border border-blue-200 bg-blue-50 p-10 text-center">
 
-          <p className="mt-4 text-5xl font-semibold text-slate-900">
-            ₹{estimate.min.toLocaleString()} – ₹{estimate.max.toLocaleString()}
-          </p>
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-blue-600">
+          Estimated Starting Price
+        </p>
 
-          <p className="mt-4 text-slate-600">
-            Final pricing may vary depending on exact requirements,
-            integrations and project complexity.
-          </p>
-        </div>
+        <p className="mt-4 text-5xl font-semibold text-slate-900">
+          From ₹{(Math.ceil(estimate.min / 1000) * 1000 - 1).toLocaleString("en-IN")}
+        </p>
+
+        <p className="mt-5 text-lg font-medium text-slate-700">
+          Tailored after a free consultation
+        </p>
+
+        <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
+          Every project is unique. After understanding your goals, we'll provide a
+          detailed proposal with a transparent timeline and fixed quotation.
+        </p>
+
+      </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl border border-slate-200 p-6">
@@ -1651,7 +1696,7 @@ hover:shadow-xl
           *Pages:* ${pages}
           *Additional Features:* ${selectedFeatures.length}
           *Estimated Budget:*
-          ₹${estimate.min.toLocaleString()} - ₹${estimate.max.toLocaleString()}
+          ₹{(Math.ceil(estimate.min / 1000) * 1000 - 1).toLocaleString("en-IN")}
           ━━━━━━━━━━━━━━
           *Selected Features:*
           ${getSelectedFeatureTitles()}

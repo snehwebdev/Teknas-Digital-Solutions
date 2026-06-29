@@ -31,20 +31,87 @@ export default function ServicesPage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-24">
       
-      {/* HEADER */}
-      <div className="max-w-3xl">
-        <p className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">
-  OUR SERVICES
-</p>
-        <h1 className="text-4xl md:text-5xl font-semibold text-slate-900">
-          Services built to grow your business
-        </h1>
+            {/* HEADER */}
+            <div className="max-w-4xl">
+              <p className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">
+                OUR SERVICES
+              </p>
 
-        <p className="mt-6 text-lg text-slate-600">
-          We don’t just build websites or apps — we build systems that help
-          businesses attract customers, increase revenue, and scale operations.
-        </p>
-      </div>
+              <h1 className="mt-6 text-4xl md:text-5xl font-semibold text-slate-900">
+                Services built to grow your business
+              </h1>
+
+              <p className="mt-6 text-lg leading-8 text-slate-600">
+                We don't just build websites or apps—we create digital solutions
+                that help businesses attract customers, automate operations,
+                improve efficiency, and scale with confidence.
+              </p>
+
+              {/* SERVICE CATEGORY BUTTONS */}
+              <div className="mt-10 flex flex-wrap gap-4">
+
+                <Link
+                  href="/services/websites"
+                  className="
+                    rounded-full
+                    border
+                    border-slate-300
+                    bg-white
+                    px-6
+                    py-3
+                    font-medium
+                    transition-all
+                    duration-300
+                    hover:border-blue-600
+                    hover:bg-blue-50
+                    hover:text-blue-600
+                  "
+                >
+                  Website Development
+                </Link>
+
+                <Link
+                  href="/services/apps"
+                  className="
+                    rounded-full
+                    border
+                    border-slate-300
+                    bg-white
+                    px-6
+                    py-3
+                    font-medium
+                    transition-all
+                    duration-300
+                    hover:border-blue-600
+                    hover:bg-blue-50
+                    hover:text-blue-600
+                  "
+                >
+                  Mobile Applications
+                </Link>
+
+                <Link
+                  href="/services/redesign"
+                  className="
+                    rounded-full
+                    border
+                    border-slate-300
+                    bg-white
+                    px-6
+                    py-3
+                    font-medium
+                    transition-all
+                    duration-300
+                    hover:border-blue-600
+                    hover:bg-blue-50
+                    hover:text-blue-600
+                  "
+                >
+                  Website Redesign
+                </Link>
+
+              </div>
+            </div>
 
       {/* GRID */}
       <div className="mt-16 grid gap-6 md:grid-cols-2">
