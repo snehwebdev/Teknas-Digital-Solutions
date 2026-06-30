@@ -13,7 +13,7 @@ export default function HomePage() {
           <Reveal>
             <div>
               <p className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm">
-                Trusted Digital Solutions For Growing Businesses
+                <b>Trusted Digital Solutions For Growing Businesses</b>
               </p>
               <h1 className="mt-8 text-6xl font-semibold leading-tight tracking-tight text-slate-900 md:text-7xl">
                 Websites,
