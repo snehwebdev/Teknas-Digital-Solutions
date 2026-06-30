@@ -69,45 +69,60 @@ export function calculateEstimate({
   // Education: LMS features, batch/course mgmt, student portals
   // Finance/BFSI: regulatory copy, calculators, lead forms, high trust design bar
 
-  switch (industry) {
-  case "healthcare":
-    min += 1500;
-    max += 4000;
-    break;
-
-  case "real-estate":
-    min += 3000;
-    max += 9000;
-    break;
-
-  case "medical_agency":
-    min += 2500;
-    max += 6000;
-    break;
-
-  case "ecommerce":
-    min += 8000;
-    max += 20000;
-    break;
-
-  case "education":
-    min += 2500;
-    max += 6000;
-    break;
-
-  case "finance":
-    min += 4000;
-    max += 10000;
-    break;
-
+switch (industry) {
   case "restaurant":
     min += 1000;
     max += 3000;
     break;
 
+  case "fitness":
+    min += 2000;
+    max += 5000;
+    break;
+
+  case "healthcare": // clinics
+    min += 5000;
+    max += 10000;
+    break;
+
+  case "hospital":
+    min += 10000;
+    max += 20000;
+    break;
+
+  case "medical_agency":
+    min += 12000;
+    max += 22000;
+    break;
+
+  case "education":
+    min += 8000;
+    max += 15000;
+    break;
+
+  case "real-estate":
+    min += 15000;
+    max += 30000;
+    break;
+
   case "logistics":
-    min += 2500;
-    max += 7000;
+    min += 10000;
+    max += 18000;
+    break;
+
+  case "manufacturing":
+    min += 10000;
+    max += 20000;
+    break;
+
+  case "finance":
+    min += 15000;
+    max += 30000;
+    break;
+
+  case "ecommerce":
+    min += 18000;
+    max += 40000;
     break;
 
   default:
