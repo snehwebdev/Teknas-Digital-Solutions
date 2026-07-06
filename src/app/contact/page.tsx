@@ -55,11 +55,11 @@ export default function ContactPage() {
           </p>
 
           <p className="mt-6 font-medium break-all">
-            teknasDigital Solutions@gmail.com
+            TeknasDigitalSolutions@gmail.com
           </p>
 
           <a
-            href="mailto:teknasDigital Solutions@gmail.com"
+            href="https://mail.google.com/mail/u/0/?fs=1&to=teknaslabs@gmail.com&tf=cm"
             className="mt-6 inline-flex rounded-full border border-slate-300 px-6 py-3 transition-all duration-300 hover:bg-slate-100"
           >
             Send Email
@@ -76,11 +76,11 @@ export default function ContactPage() {
           </p>
 
           <p className="mt-6 font-medium">
-            @teknasDigital Solutions
+            @TeknasDigitalSolutions
           </p>
 
           <a
-            href="https://instagram.com/teknasDigital Solutions"
+            href="https://instagram.com/teknaslabs"
             target="_blank"
             className="mt-6 inline-flex rounded-full border border-slate-300 px-6 py-3 transition-all duration-300 hover:bg-slate-100"
           >
@@ -91,50 +91,6 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Form */}
-
-      <div className="mt-20 rounded-[32px] border border-slate-200 p-10">
-
-        <h2 className="text-3xl font-semibold">
-          Tell Us About Your Project
-        </h2>
-
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-
-          <input
-            placeholder="Your Name"
-            className="rounded-2xl border border-slate-300 p-4 outline-none focus:border-slate-900"
-          />
-
-          <input
-            placeholder="Business Name"
-            className="rounded-2xl border border-slate-300 p-4 outline-none focus:border-slate-900"
-          />
-
-          <input
-            placeholder="Email Address"
-            className="rounded-2xl border border-slate-300 p-4 outline-none focus:border-slate-900"
-          />
-
-          <input
-            placeholder="Phone Number"
-            className="rounded-2xl border border-slate-300 p-4 outline-none focus:border-slate-900"
-          />
-
-        </div>
-
-        <textarea
-          placeholder="Tell us about your project..."
-          rows={6}
-          className="mt-6 w-full rounded-2xl border border-slate-300 p-4 outline-none focus:border-slate-900"
-        />
-
-        <button
-          className="mt-6 rounded-full bg-slate-900 px-8 py-3 text-white transition-all duration-300 hover:bg-slate-800 hover:scale-105"
-        >
-          Send Inquiry
-        </button>
-
-      </div>
 
       {/* Final CTA */}
 

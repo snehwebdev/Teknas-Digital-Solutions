@@ -25,25 +25,62 @@ export default function Navbar() {
       top-0
       z-50
       border-b
-      border-white/30
-      bg-white/80
+      border-white/40
+      bg-white/70
       backdrop-blur-2xl
-      shadow-[0_8px_30px_rgb(0,0,0,0.04)]
+      shadow-[0_12px_40px_rgba(15,23,42,0.06)]
       "
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
+
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="text-xl font-semibold tracking-tight"
+          className="group flex items-center gap-3"
         >
-          <span className="text-blue-600">Teknas</span>{" "}
-          Digital Solutions
+          <div
+            className="
+            flex
+            h-11
+            w-11
+            items-center
+            justify-center
+            rounded-2xl
+            bg-gradient-to-br
+            from-blue-600
+            via-cyan-500
+            to-violet-600
+            text-lg
+            font-bold
+            text-white
+            shadow-lg
+            transition-all
+            duration-300
+            group-hover:rotate-6
+            group-hover:scale-105
+            "
+          >
+            T
+          </div>
+
+          <div>
+            <h1 className="text-lg font-bold leading-none tracking-tight">
+              <span className="text-slate-900">Teknas</span>{" "}
+              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-violet-600 bg-clip-text text-transparent">
+                Digital
+              </span>
+            </h1>
+
+            <p className="mt-1 text-xs tracking-wide text-slate-500">
+              Solutions
+            </p>
+          </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm">
+        {/* Desktop */}
+
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => {
             const active = pathname === item.href;
 
@@ -51,23 +88,21 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative"
+                className="relative py-2 text-sm font-medium"
               >
                 <span
                   className={
                     active
-                      ? "font-semibold text-slate-900"
-                      : "text-slate-500 transition hover:text-blue-600"
+                      ? "text-slate-900"
+                      : "text-slate-500 transition duration-300 hover:text-blue-600"
                   }
                 >
                   {item.name}
                 </span>
 
                 <span
-                  className={`absolute -bottom-2 left-0 h-[2px] w-full origin-left transition-transform duration-300 ${
-                    active
-                      ? "scale-x-100 bg-slate-900"
-                      : "scale-x-0 bg-slate-300"
+                  className={`absolute bottom-0 left-0 h-[3px] rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300 ${
+                    active ? "w-full" : "w-0"
                   }`}
                 />
               </Link>
@@ -75,23 +110,31 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Side */}
-        <div className="flex items-center gap-3">
+        {/* Right */}
+
+        <div className="flex items-center gap-4">
           <Link
             href="/estimate"
             className="
             hidden
             md:inline-flex
+            items-center
             rounded-full
-            bg-slate-900
-            px-5
-            py-2
+            bg-gradient-to-r
+            from-blue-600
+            via-cyan-500
+            to-violet-600
+            px-6
+            py-3
             text-sm
+            font-semibold
             text-white
+            shadow-[0_12px_30px_rgba(37,99,235,.35)]
             transition-all
             duration-300
-            hover:bg-blue-600
+            hover:-translate-y-1
             hover:scale-105
+            hover:shadow-[0_20px_45px_rgba(37,99,235,.45)]
             "
           >
             Get Estimate
@@ -99,28 +142,40 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="flex flex-col gap-1 md:hidden"
+            className="
+            rounded-xl
+            border
+            border-slate-200
+            bg-white
+            p-3
+            shadow-sm
+            transition
+            hover:border-blue-300
+            md:hidden
+            "
           >
-            <span className="h-[2px] w-6 bg-slate-900"></span>
-            <span className="h-[2px] w-6 bg-slate-900"></span>
-            <span className="h-[2px] w-6 bg-slate-900"></span>
+            <div className="space-y-1">
+              <span className="block h-0.5 w-6 rounded bg-slate-800" />
+              <span className="block h-0.5 w-6 rounded bg-slate-800" />
+              <span className="block h-0.5 w-6 rounded bg-slate-800" />
+            </div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile */}
+
       {open && (
         <div
           className="
-          md:hidden
           border-t
-          border-slate-200
+          border-slate-100
           bg-white
-          shadow-xl
+          shadow-2xl
+          md:hidden
           "
         >
-          <div className="flex flex-col px-6 py-6">
-
+          <div className="flex flex-col gap-2 px-6 py-6">
             {navItems.map((item) => {
               const active = pathname === item.href;
 
@@ -129,10 +184,10 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`py-4 border-b border-slate-100 ${
+                  className={`rounded-xl px-4 py-4 transition ${
                     active
-                      ? "font-semibold text-slate-900"
-                      : "text-slate-600"
+                      ? "bg-gradient-to-r from-blue-50 to-cyan-50 font-semibold text-blue-700"
+                      : "text-slate-700 hover:bg-slate-50"
                   }`}
                 >
                   {item.name}
@@ -144,18 +199,21 @@ export default function Navbar() {
               href="/estimate"
               onClick={() => setOpen(false)}
               className="
-              mt-6
+              mt-4
               rounded-full
-              bg-slate-900
+              bg-gradient-to-r
+              from-blue-600
+              via-cyan-500
+              to-violet-600
               px-6
-              py-3
+              py-4
               text-center
+              font-semibold
               text-white
-              transition
-              hover:bg-blue-600
+              shadow-lg
               "
             >
-              Get Estimate
+              Get Free Estimate
             </Link>
           </div>
         </div>

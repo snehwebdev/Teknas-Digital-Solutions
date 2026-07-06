@@ -28,7 +28,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://instagram.com/teknaslab"
+                href="https://instagram.com/teknaslabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-pink-600 bg-pink-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-pink-700"
@@ -81,7 +81,7 @@ export default function Footer() {
               <p>teknaslabs@gmail.com</p>
 
               <a
-                href="mailto:teknaslabs@gmail.com"
+                href="https://mail.google.com/mail/u/0/?fs=1&to=teknaslabs@gmail.com&tf=cm"
                 className="inline-block rounded-full border border-slate-300 px-4 py-2 text-sm transition-all duration-300 hover:bg-slate-900 hover:text-white"
               >
                 Send Email

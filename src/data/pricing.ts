@@ -81,7 +81,7 @@ switch (industry) {
     break;
 
   case "healthcare": // clinics
-    min += 5000;
+    min += 7000;
     max += 10000;
     break;
 
@@ -123,6 +123,11 @@ switch (industry) {
   case "ecommerce":
     min += 18000;
     max += 40000;
+    break;
+
+  case "others":
+    min += 10000;
+    max += 20000;
     break;
 
   default:

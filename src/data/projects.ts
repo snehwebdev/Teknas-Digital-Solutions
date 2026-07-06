@@ -1,11 +1,28 @@
 export const portfolioProjects = [
   {
     slug: "healthcare-clinic",
-    title: "Healthcare Clinic Platform",
+
+    title: "Smile Dental Clinic",
+
     category: "Healthcare",
+
+    shortDescription:
+      "Premium website for a modern dental clinic.",
+
     description:
-      "Patient focused healthcare website with appointment booking and patient portal.",
+      "A high-converting dental clinic website focused on online appointment booking, patient trust and local SEO.",
+
+    image: "/projects/dental-clinic/cover.webp",
+
+    logo: "/projects/dental-clinic/logo.webp",
+
+    liveUrl: "https://example.com",
+
     timeline: "4 Weeks",
+
+    client: "Smile Dental Clinic",
+
+    year: "2026",
 
     features: [
       "Appointment Booking",
@@ -26,12 +43,28 @@ export const portfolioProjects = [
 
   {
     slug: "medical-agency-system",
+
     title: "Medical Agency Management",
+
     category: "Medical Agency",
+
+    shortDescription:
+      "Inventory & billing management platform.",
+
     description:
       "Inventory, billing and payment tracking platform.",
 
+    image: "/projects/medical-agency/cover.webp",
+
+    logo: "/projects/medical-agency/logo.webp",
+
+    liveUrl: "",
+
     timeline: "6 Weeks",
+
+    client: "ABC Medical Agency",
+
+    year: "2026",
 
     features: [
       "Inventory Management",
@@ -52,12 +85,28 @@ export const portfolioProjects = [
 
   {
     slug: "gym-management",
+
     title: "Gym Management Platform",
+
     category: "Fitness",
+
+    shortDescription:
+      "Modern fitness management platform.",
+
     description:
       "Workout tracking and membership management system.",
 
+    image: "/projects/gym/cover.webp",
+
+    logo: "/projects/gym/logo.webp",
+
+    liveUrl: "",
+
     timeline: "5 Weeks",
+
+    client: "IronFit Gym",
+
+    year: "2026",
 
     features: [
       "Workout Plans",
@@ -78,12 +127,28 @@ export const portfolioProjects = [
 
   {
     slug: "restaurant-booking",
+
     title: "Restaurant Reservation Platform",
+
     category: "Restaurant",
+
+    shortDescription:
+      "Restaurant website with online reservations.",
+
     description:
       "Table reservations and food ordering platform.",
 
+    image: "/projects/restaurant/cover.webp",
+
+    logo: "/projects/restaurant/logo.webp",
+
+    liveUrl: "",
+
     timeline: "4 Weeks",
+
+    client: "Food Lounge",
+
+    year: "2026",
 
     features: [
       "Reservations",
@@ -103,12 +168,28 @@ export const portfolioProjects = [
 
   {
     slug: "real-estate-platform",
+
     title: "Real Estate Platform",
+
     category: "Real Estate",
+
+    shortDescription:
+      "Lead generation platform for builders.",
+
     description:
       "Property showcase and lead generation platform.",
 
+    image: "/projects/real-estate/cover.webp",
+
+    logo: "/projects/real-estate/logo.webp",
+
+    liveUrl: "",
+
     timeline: "6 Weeks",
+
+    client: "XYZ Builders",
+
+    year: "2026",
 
     features: [
       "Property Search",
@@ -128,12 +209,28 @@ export const portfolioProjects = [
 
   {
     slug: "education-portal",
+
     title: "Education Portal",
+
     category: "Education",
+
+    shortDescription:
+      "Modern student learning portal.",
+
     description:
       "Student portal with study materials and attendance tracking.",
 
+    image: "/projects/education/cover.webp",
+
+    logo: "/projects/education/logo.webp",
+
+    liveUrl: "",
+
     timeline: "6 Weeks",
+
+    client: "ABC Academy",
+
+    year: "2026",
 
     features: [
       "Student Accounts",

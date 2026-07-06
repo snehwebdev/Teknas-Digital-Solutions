@@ -46,44 +46,126 @@ export default function ProjectsPage() {
 
 </div>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className="
-group
-rounded-[32px]
-border
-border-slate-200
-bg-white/80
-backdrop-blur
-p-8
-transition-all
-duration-500
-hover:-translate-y-2
-hover:border-blue-200
-hover:shadow-[0_25px_50px_rgba(37,99,235,0.12)]
-"
-          >
-            <p className="text-sm font-medium text-blue-600">
-              {project.category}
-            </p>
+      <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-            <h2 className="mt-3 text-2xl font-semibold">
-              {project.title}
-            </h2>
+  {[
+    {
+      name: "Healthcare",
+      slug: "healthcare",
+      description: "Hospitals, Clinics, Dentists & Healthcare Businesses",
+      icon: "🏥",
+      color:
+        "from-blue-600 via-cyan-500 to-violet-600",
+    },
 
-            <p className="mt-4 text-slate-600">
-              {project.description}
-            </p>
+    {
+      name: "Medical Agency",
+      slug: "medical-agency",
+      description: "Pharmaceutical & Medical Distribution",
+      icon: "💊",
+      color:
+        "from-cyan-500 via-sky-500 to-blue-600",
+    },
 
-            <div className="mt-8 font-medium text-blue-600 transition-transform duration-300 group-hover:translate-x-1">
-              View Project →
-            </div>
-          </Link>
-        ))}
-      </div>
+    {
+      name: "Education",
+      slug: "education",
+      description: "Schools, Coaching & Institutes",
+      icon: "🎓",
+      color:
+        "from-violet-600 via-purple-500 to-fuchsia-500",
+    },
+
+    {
+      name: "Fitness",
+      slug: "fitness",
+      description: "Gyms, Trainers & Wellness",
+      icon: "🏋️",
+      color:
+        "from-orange-500 via-pink-500 to-red-500",
+    },
+
+    {
+      name: "Real Estate",
+      slug: "real-estate",
+      description: "Builders & Property Consultants",
+      icon: "🏢",
+      color:
+        "from-emerald-500 via-teal-500 to-cyan-500",
+    },
+
+    {
+      name: "Manufacturing",
+      slug: "manufacturing",
+      description: "Factories & Industrial Businesses",
+      icon: "🏭",
+      color:
+        "from-slate-700 via-slate-800 to-slate-900",
+    },
+  ].map((industry) => {
+
+    const count = projects.filter(
+      (p) => p.category.toLowerCase() === industry.name.toLowerCase()
+    ).length;
+
+    return (
+
+      <Link
+        key={industry.slug}
+        href={`/projects/category/${industry.slug}`}
+        className="
+        group
+        relative
+        overflow-hidden
+        rounded-[34px]
+        border
+        border-slate-200
+        bg-white/75
+        backdrop-blur-xl
+        p-8
+        transition-all
+        duration-500
+        hover:-translate-y-3
+        hover:border-blue-200
+        hover:shadow-[0_25px_60px_rgba(37,99,235,.12)]
+        "
+      >
+
+        <div
+          className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${industry.color}`}
+        />
+
+        <div className="text-5xl">
+          {industry.icon}
+        </div>
+
+        <h2 className="mt-6 text-2xl font-bold text-slate-900">
+          {industry.name}
+        </h2>
+
+        <p className="mt-3 leading-7 text-slate-600">
+          {industry.description}
+        </p>
+
+        <div className="mt-8 flex items-center justify-between">
+
+          <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
+            {count} Project{count !== 1 && "s"}
+          </span>
+
+          <span className="font-semibold text-blue-600 transition group-hover:translate-x-1">
+            Explore →
+          </span>
+
+        </div>
+
+      </Link>
+
+    );
+
+  })}
+
+</div>
       <section className="mt-24">
 
   <div className="rounded-[40px] bg-slate-900 p-12 text-center text-white">
